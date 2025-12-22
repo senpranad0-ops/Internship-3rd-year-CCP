@@ -73,7 +73,7 @@ footer {
     -1px  1px 0 #000,
      1px  1px 0 #000;
 }
-.login {
+#login {
  position: absolute;
  top: 20px;
  right: 20px;
@@ -92,7 +92,7 @@ footer {
      1px  1px 0 #000;
  margin-left: 10px;
 }
-.sign-up {
+#sign-up {
  position: absolute;
  top: 20px;
  right: 100px;
