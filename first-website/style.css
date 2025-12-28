@@ -119,4 +119,11 @@ button{
    appearance: none;
    -webkit-appearance: none;
 }
-
+.btn {
+  display: inline-block;
+  text-decoration: none; 
+  color: inherit;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
