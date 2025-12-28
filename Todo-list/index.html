@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-do List</title>
 
+    <style>
+        body {
+            margin: 0;
+            height: 100px;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 420px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .input-box button {
+            padding: 10px 16px;
+            background-color: #2563d8;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #cfe6ea;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .task button {
+            background-color: #1e3a8a;
+            border: none;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="input-box">
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button onclick="addTask()">Add</button>
+    </div>
+
+    <div id="taskList"></div>
+</div>
+
+<script>
+    function addTask() {
+        var input = document.getElementById("taskInput");
+        var taskText = input.value.trim();
+
+        if (taskText === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        // Create task container
+        var taskDiv = document.createElement("div");
+        taskDiv.className = "task";
+
+        // Create text node
+        var taskSpan = document.createElement("span");
+        taskSpan.innerText = taskText;
+
+        // Create delete button
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "🗑️";
+
+        deleteBtn.onclick = function () {
+            taskDiv.remove();
+        };
+
+        taskDiv.appendChild(taskSpan);
+        taskDiv.appendChild(deleteBtn);
+
+        document.getElementById("taskList").appendChild(taskDiv);
+
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
